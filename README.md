@@ -1,3 +1,49 @@
+<div align="center">
+
+# Library Management System
+
+**Books, borrowers and the structure of a small lending system.**
+
+<sub>CLASSIC C++ &nbsp; • &nbsp; Library records &nbsp; • &nbsp; Console application</sub>
+
+</div>
+
+---
+
+## What this project explores
+
+Manage books and students, issue and return books, calculate overdue fines.
+
+**Try this:** Explore book and student records and the lending workflow.
+
+## Source & structure
+
+| Path | Description |
+|---|---|
+| [`BOOK.DAT`](./BOOK.DAT) | Original project asset / directory |
+| [`STUDENT.DAT`](./STUDENT.DAT) | Original project asset / directory |
+| [`docs`](./docs) | Original project asset / directory |
+| [`library-management-project-output.doc`](./library-management-project-output.doc) | Original project asset / directory |
+| [`library-management-system-project.CPP`](./library-management-system-project.CPP) | Original C++ source code |
+| [`run-in-browser.html`](./run-in-browser.html) | Original project asset / directory |
+
+
+## Running the C++ version
+
+The checked-in source includes historical console programs. Some variants use Turbo C++ / DOS-specific headers and APIs, so **a modern C++ compiler may require porting or a compatibility layer**. Open the original source to find its entry point; compile with a compiler compatible with the program's dialect.
+
+## Learning objectives
+
+- Trace the input/output cycle of a stateful console program.
+- Inspect the program's control flow and data handling.
+- Identify portability improvements needed for modern compilers or browsers.
+
+## Disclaimer
+
+A programming exercise, not a production library records system. Use invented test records and do not store confidential information.
+
+<details><summary><strong>Original project notes</strong></summary>
+
 # Library Management System
 
 Manage books and students, issue and return books, calculate overdue fines.
@@ -29,3 +75,9 @@ The previous WebAssembly GitHub Actions workflow is not required for this standa
 ### Note
 
 This repository contains archived, third-party classroom-style C++ examples from a previously supplied collection. Review attribution and redistribution rights before publishing as your own original work.
+
+</details>
+
+---
+
+<sub>Part of the [C++ project collection](https://github.com/sharanyapal?tab=repositories).</sub>
