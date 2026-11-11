@@ -1,0 +1,18 @@
+# Build outputs and editor files
+*.exe
+*.o
+*.obj
+*.out
+*.pdb
+*.ilk
+*.idb
+*.a
+*.so
+*.dll
+Debug/
+Release/
+build/
+.vs/
+.vscode/
+.DS_Store
+# Sample .DAT files are intentionally preserved. Review before making public.
