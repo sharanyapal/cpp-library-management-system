@@ -22,3 +22,10 @@ This code uses legacy **Turbo C++ / DOS-specific** headers (for example, `<iostr
 - `.doc` files (where present) are archived output screenshots/examples, not modern documentation.
 - Original author/contributor names and historical metadata may appear in the supplied files. No new ownership or open-source license is claimed. Check redistribution rights before public release.
 - Code is provided as-is. No claims of production security or cross-platform compatibility.
+
+
+## Run the original C++ program in your browser
+
+[Open interactive WebAssembly console](https://sharanyapal.github.io/cpp-library-management-system/) — the C++ source runs inside your web browser, not as a JavaScript rewrite. Browser adapters are under `web/` and the original source files remain unchanged.
+
+GitHub Actions builds and publishes the page after every push to main. Enable it under **Settings → Pages → Build and deployment → GitHub Actions**. Data files are temporary for each page session.

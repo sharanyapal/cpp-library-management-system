@@ -1,0 +1,56 @@
+name: Build and deploy interactive C++ browser demo
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: emscripten/emsdk:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile original C++ source to WebAssembly
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp "library-management-system-project.CPP" web/source_port.cpp
+          sed -i -e 's/<iostream.h>/<iostream>/g' -e 's/<fstream.h>/<fstream>/g' -e 's/<iomanip.h>/<iomanip>/g' \
+            -e '/^[[:space:]]*#include[[:space:]]*<conio.h>/d' \
+            -e '/^[[:space:]]*#include[[:space:]]*<process.h>/d' web/source_port.cpp
+          mkdir -p dist
+          em++ web/main.cpp -std=c++17 -O1 -w -o dist/demo.js \
+            -sMODULARIZE=1 -sEXPORT_NAME=createCppDemo -sASYNCIFY=1 \
+            '-sASYNCIFY_IMPORTS=["browser_read_char"]' \
+            -sFORCE_FILESYSTEM=1 -sEXIT_RUNTIME=1 -sALLOW_MEMORY_GROWTH=1 \
+            '-sEXPORTED_RUNTIME_METHODS=["callMain"]' -sENVIRONMENT=web
+          cp web/index.html dist/index.html
+          touch dist/.nojekyll
+      - uses: actions/upload-artifact@v4
+        with:
+          name: compiled-cpp-browser
+          path: dist/
+          include-hidden-files: true
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: compiled-cpp-browser
+          path: dist
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4
