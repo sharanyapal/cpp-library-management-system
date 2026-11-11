@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080f1d">
+<meta name="description" content="Interactive browser demo for Library Management System. Play and test online or offline.">
+<title>Library Management System — Browser Playground</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body style="--accent:#86def3">
+<div class="frame">
+<header class="topbar"><a class="logo" href="https://github.com/sharanyapal" target="_blank" rel="noreferrer"><span class="logo-icon">&lt;/&gt;</span> SHARANYA<span class="logo-muted">/DEV</span></a><div class="top-nav"><span class="live-dot"></span> OFFLINE-READY <span class="top-separator">/</span> C++ CLASSICS</div></header>
+<main>
+<div class="breadcrumb">PROJECT / RECORDS / <span>INTERACTIVE DEMO</span></div>
+<div class="hero"><div><div class="eyebrow"><span class="icon-pill">●</span> Browser playground <span class="divider-bar">/</span> Records</div><h1>Library Management System</h1><p class="description">Manage books and students, issue and return books, calculate overdue fines.</p></div><div class="hero-deco">C<span>++</span></div></div>
+<div class="toolbar"><button id="start" class="button button-primary" type="button"><span>▶</span> Start program</button><button id="restart" class="button" type="button" disabled>↻ Restart</button><button id="clear" class="button" type="button">⌫ Clear log</button><button id="download" class="button" type="button">↓ Save transcript</button><span class="program-status"><span id="status-dot" class="status-dot"></span><span id="status">READY</span></span></div>
+<div class="body-grid"><section class="console-shell" aria-label="Interactive terminal"><div class="console-top"><div class="traffic"><i></i><i></i><i></i></div><span class="console-label">terminal / <span>cpp-library-management-system</span></span><span id="console-mode">browser</span></div><pre id="console" class="console-output" role="log" aria-live="polite" aria-relevant="additions">$ Ready to run. Press 'Start program'.
+</pre><form id="input-form" class="console-input"><label for="command">❯</label><input id="command" type="text" autocomplete="off" spellcheck="false" placeholder="Start the program to type input…" disabled aria-label="Console input"><button type="submit" id="send" disabled>ENTER ↵</button></form></section>
+<aside class="sidebar"><section class="aside-section"><h2>01 / About this build</h2><p>This page reproduces the original console application's menus, rules, and calculations in JavaScript. It runs instantly in any modern browser.</p><div class="facts"><div><span>Runtime</span><strong>JavaScript port</strong></div><div><span>Setup</span><strong>No installation</strong></div><div><span>Mode</span><strong>Local + static hosting</strong></div><div><span>Original</span><strong>C++ preserved</strong></div></div></section><section class="aside-section"><h2>02 / Project links</h2><a class="aside-link" href="https://github.com/sharanyapal/cpp-library-management-system" target="_blank" rel="noreferrer">View GitHub repository <b>↗</b></a><a class="aside-link" href="https://github.com/sharanyapal/cpp-library-management-system/blob/main/library-management-system-project.CPP" target="_blank" rel="noreferrer">View original C++ file <b>↗</b></a></section><section class="aside-section"><h2>03 / Controls</h2><p>Use the input box and Enter, just like a terminal. Restart begins a new program session.</p><button class="data-reset" id="reset-data" type="button">Clear this demo's saved records</button><p class="microcopy">Record-management demos store data in this browser using localStorage. Each browser and device has independent records.</p></section></aside></div>
+</main><footer class="footer"><span>CLASSIC CODE, NEW INTERFACE.</span><span>Portfolio browser edition · Library Management System</span></footer></div>
+<script src="./terminal.js"></script><script src="./program.js"></script><script>
+window.addEventListener('DOMContentLoaded',()=>initPlayground({slug:"cpp-library-management-system",title:"Library Management System"}));
+</script></body></html>

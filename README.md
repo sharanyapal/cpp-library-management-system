@@ -1,31 +1,31 @@
 # Library Management System
 
-Console library system for managing book and student records.
+Manage books and students, issue and return books, calculate overdue fines.
 
-This repository contains the original files from a supplied collection, preserved without changing the source code.
+## Run in your browser (no setup)
 
-## Contents
+**Open [`run-in-browser.html`](run-in-browser.html)** or double-click [`docs/index.html`](docs/index.html) after extracting the repository. You can also deploy the `docs/` folder to any static host.
 
-- `BOOK.DAT`
-- `STUDENT.DAT`
-- `library-management-project-output.doc`
-- `library-management-system-project.CPP`
+> The browser playground is an independently written **JavaScript adaptation** of this repository's original C++ logic. It is not a C++ interpreter or WebAssembly binary. Original C++ sources are retained unchanged, and the HTML, CSS and JS demo is immediately usable offline.
 
-## Build notes
+### Static GitHub Pages
 
-### Compiler compatibility
-This code uses legacy **Turbo C++ / DOS-specific** headers (for example, `<iostream.h>` or `<conio.h>`) and does **not** pass a modern GCC C++17 syntax check without migration. It is preserved as archived source code.
+Go to **Settings → Pages → Build and deployment → Deploy from a branch**; choose `main` and `/docs`, then Save. Your site's intended address is `https://sharanyapal.github.io/cpp-library-management-system/` after GitHub confirms a successful deployment.
 
-## Notes
+The previous WebAssembly GitHub Actions workflow is not required for this standalone browser build. The included bulk upload script removes just that previous demo workflow and the superseded `web/` adapter from the **eight named repositories**, without deleting other project files.
 
-- The `.DAT` files (where present) are historical sample records included with the source, **not** Git LFS requirements. Review their contents before making this repo public.
-- `.doc` files (where present) are archived output screenshots/examples, not modern documentation.
-- Original author/contributor names and historical metadata may appear in the supplied files. No new ownership or open-source license is claimed. Check redistribution rights before public release.
-- Code is provided as-is. No claims of production security or cross-platform compatibility.
+### Original C++ source
 
+- [library-management-system-project.CPP](library-management-system-project.CPP)
+- All other historical C++, data and document files are kept unchanged.
 
-## Run the original C++ program in your browser
+### Browser features
 
-[Open interactive WebAssembly console](https://sharanyapal.github.io/cpp-library-management-system/) — the C++ source runs inside your web browser, not as a JavaScript rewrite. Browser adapters are under `web/` and the original source files remain unchanged.
+- Interactive terminal-style output with keyboard input, restart, and downloadable transcript
+- Games follow the original scoring, turns and rule logic
+- Data apps use `localStorage` for records within the same browser, replacing local `.DAT` files; records can be cleared explicitly
+- Files: `docs/index.html`, `docs/style.css`, `docs/terminal.js`, `docs/program.js`
 
-GitHub Actions builds and publishes the page after every push to main. Enable it under **Settings → Pages → Build and deployment → GitHub Actions**. Data files are temporary for each page session.
+### Note
+
+This repository contains archived, third-party classroom-style C++ examples from a previously supplied collection. Review attribution and redistribution rights before publishing as your own original work.
